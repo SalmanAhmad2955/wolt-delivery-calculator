@@ -1,5 +1,5 @@
 import React from "react";
-import DeliveryFeeCalculator from "./components/DeliveryFeeCalculator";
+import { DeliveryFeeCalculator } from "./components/DeliveryFeeCalculator";
 import background from "./assets/background.png";
 
 function App() {

@@ -15,7 +15,7 @@ interface InputProps {
   max?: string;
 }
 
-const Input: React.FunctionComponent<InputProps> = ({
+export const Input: React.FunctionComponent<InputProps> = ({
   label,
   htmlFor,
   type,
@@ -45,8 +45,6 @@ const Input: React.FunctionComponent<InputProps> = ({
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLocalValue(e.target.value);
-
-    //TODO:  Update parent component if the data is valid
     isValidInput(Number(e.target.value), Number(min), Number(max));
     onChange && onChange(e);
   };
@@ -101,5 +99,3 @@ const Input: React.FunctionComponent<InputProps> = ({
     </div>
   );
 };
-
-export default Input;
