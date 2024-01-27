@@ -1,7 +1,8 @@
 import React, { useState, ChangeEvent } from "react";
-
 import { format } from "date-fns";
 import Input from "../inputFiled";
+import deliveryFeeCalculator from "../../utils/calculateDeliveryFee";
+import logo from "../../assets/Wolt.svg";
 
 const DeliveryFeeCalculator: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -31,6 +32,14 @@ const DeliveryFeeCalculator: React.FC = () => {
       formState.numItems,
       formState.orderTime
     );
+    const formattedFormState = {
+      ...formState,
+      orderTime: formState.orderTime.toISOString(),
+    };
+    const calculatedFee = deliveryFeeCalculator(formattedFormState);
+    console.log("Fee", calculatedFee);
+    setDeliveryFee(calculatedFee);
+    setShowResult(true);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -40,11 +49,15 @@ const DeliveryFeeCalculator: React.FC = () => {
   return (
     <div className={"flex flex-col gap-3"}>
       <div
-        className={`${
-          showResult ? "bg-sky-400 text-white" : "bg-white"
-        } drop-shadow-2xl p-[24px] rounded-[12px] inline-block  min-w-[400px]`}
+        className={`
+          bg-white drop-shadow-2xl p-[24px] rounded-[12px] inline-block  min-w-[400px]`}
       >
-        <h1 className={"font-semibold text-lg mb-3 mx-auto text-center"}>
+        <img
+          src={logo}
+          alt="Logo"
+          className={"mb-3 mx-auto text-center w-16 h-auto"}
+        />
+        <h1 className={"font-semibold text-lg mb-3 mx-auto "}>
           Delivery Fee Calculator
         </h1>
         <form
@@ -82,15 +95,15 @@ const DeliveryFeeCalculator: React.FC = () => {
             onChange={handleInputChange}
           />
           <Input
-            id={"amountOfItems"}
+            id={"numItems"}
             dataTestId={"numItems"}
-            name={"amountOfItems"}
+            name={"numItems"}
             step={"1"}
             min={"0"}
             max={"1000"}
             type={"number"}
-            label={"Amount of Items"}
-            htmlFor={"amountOfItems"}
+            label={"Number of items"}
+            htmlFor={"numItems"}
             value={formState.numItems.toString()}
             onChange={handleInputChange}
           />
@@ -113,10 +126,18 @@ const DeliveryFeeCalculator: React.FC = () => {
               " " +
               "font-bold mt-4 bg-sky-400 text-white rounded-md px-4 py-2 border-none" +
               " " +
-              "enabled:hover:bg-sky-300"
+              "enabled:hover:bg-sky-300 "
+            }
+            disabled={
+              formState.cartValue === 0 ||
+              formState.deliveryDistance === 0 ||
+              formState.numItems === 0
             }
           />
         </form>
+        {showResult && (
+          <div data-test-id="fee">Delivery Fee: {deliveryFee} euros</div>
+        )}
       </div>
     </div>
   );

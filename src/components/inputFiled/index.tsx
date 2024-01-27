@@ -1,58 +1,4 @@
-// import React from "react";
-
-// interface DeliveryInputProps {
-//   label: string;
-//   id: string;
-//   dataTestId: string;
-//   value: string;
-//   name: string; // Add the 'name' prop
-//   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-//   type?: "text" | "number" | "datetime-local";
-// }
-
-// const DeliveryInput: React.FC<DeliveryInputProps> = ({
-//   label,
-//   id,
-//   dataTestId,
-//   value,
-//   name, // Use the 'name' prop for the input name
-//   onChange,
-//   type = "text",
-// }) => {
-//   return (
-//     <div className="mb-4">
-//       <label htmlFor={id} className="block text-sm font-medium text-gray-700">
-//         {label}
-//       </label>
-//       {type === "datetime-local" ? (
-//         <input
-//           type={type}
-//           id={id}
-//           data-test-id={dataTestId}
-//           name={name} // Use the 'name' prop for the input name
-//           className="mt-1 p-2 border border-gray-300 rounded-md"
-//           value={value}
-//           onChange={onChange}
-//         />
-//       ) : (
-//         <input
-//           type={type}
-//           id={id}
-//           data-test-id={dataTestId}
-//           name={name} // Use the 'name' prop for the input name
-//           className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-//           value={value}
-//           onChange={onChange}
-//         />
-//       )}
-//     </div>
-//   );
-// };
-
-// export default DeliveryInput;
-
 import React from "react";
-// import useIsMount from "../../utils/useIsMount";
 
 interface InputProps {
   label: string;
@@ -86,16 +32,6 @@ const Input: React.FunctionComponent<InputProps> = ({
   const [localValue, setLocalValue] = React.useState<string>(value || "");
   const [error, setError] = React.useState<boolean>(false);
   const [valid, setValid] = React.useState<boolean>(false);
-
-  //   const isMount = useIsMount();
-
-  //   React.useEffect(() => {
-  // Skip on mount
-  //     if (value && !isMount) {
-  //       setLocalValue(value);
-  //       isValidInput(Number(value), Number(min), Number(max));
-  //     }
-  //   }, [value]);
 
   const getBorderColor = () => {
     if (error) {

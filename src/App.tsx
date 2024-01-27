@@ -1,13 +1,14 @@
 import React from "react";
 import DeliveryFeeCalculator from "./components/DeliveryFeeCalculator";
-// import { SnackbarProvider } from "notistack";
+import background from "./assets/background.png";
 
 function App() {
   return (
-    <div className={"h-screen flex justify-center items-center bg-gray-300"}>
-      {/* <SnackbarProvider> */}
+    <div
+      className="h-screen flex justify-center items-center bg-cover "
+      style={{ backgroundImage: `url(${background})` }}
+    >
       <DeliveryFeeCalculator />
-      {/* </SnackbarProvider> */}
     </div>
   );
 }
