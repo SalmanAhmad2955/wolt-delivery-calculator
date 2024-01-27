@@ -9,9 +9,10 @@ export const ShowResult: React.FC<Result> = ({ Result, setShowResult }) => {
   return (
     <div>
       <h3 className={"font-semibold text-2xl mt-2 mb-4"}>
-        Delivery Price for the order is : {Result}€
+        {Result === 0
+          ? "Your Delivery Is Free 🎉"
+          : `Delivery Price for the order is : ${Result}€`}
       </h3>
-      {/* <h1 className={"text-5xl font-bold mt-2 mb-4"}>{Result}€</h1> */}
 
       <button
         id={"backToCalculator"}

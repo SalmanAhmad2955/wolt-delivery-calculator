@@ -1,19 +1,15 @@
 const calculateItemSurcharge = (numItems: number): number => {
-  const itemSurchargeRate = 0.5;
-  const bulkFeeThreshold = 5;
-  const bulkFeeRate = 1.2;
-
-  let itemSurcharge = 0;
-
-  // Check if the number of items exceeds the bulk fee threshold
-  if (numItems >= bulkFeeThreshold) {
-    // Calculate surcharge for each item above the threshold
-    const surchargePerItem = (numItems - bulkFeeThreshold) * itemSurchargeRate;
-    itemSurcharge =
-      surchargePerItem < bulkFeeRate ? surchargePerItem : bulkFeeRate;
+  const bultFee = 1.2;
+  const itemSurcharge = 0.5;
+  if (numItems <= 4) {
+    return 0;
   }
 
-  return itemSurcharge;
+  if (numItems <= 12) {
+    return (numItems - 4) * itemSurcharge;
+  }
+
+  return (numItems - 4) * itemSurcharge + bultFee;
 };
 
 export default calculateItemSurcharge;

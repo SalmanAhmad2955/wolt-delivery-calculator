@@ -1,5 +1,6 @@
 import isFridayRushHour from "../isFridayRushHour";
 import calculateItemSurcharge from "../calculateItemSurcharge";
+import calculateDistanceFee from "../calculateDistanceFee";
 
 interface FormState {
   cartValue: number;
@@ -8,33 +9,30 @@ interface FormState {
   orderTime: string;
 }
 const deliveryFeeCalculator = (formState: FormState): number => {
-  const baseFee = 2;
-  const feePerKm = 1;
-  const rushHourMultiplier = isFridayRushHour(formState.orderTime) ? 1.2 : 1;
+  let calculatedFee = 0;
 
-  let calculatedFee = baseFee * rushHourMultiplier;
-
-  // Small order surcharge
+  // check if cart value is greater or equal to  200€
+  if (formState.cartValue >= 200) {
+    return calculatedFee;
+  }
+  // calcluate delivery fee based on cart value
   if (formState.cartValue < 10) {
     calculatedFee += 10 - formState.cartValue;
   }
 
-  // Delivery fee based on distance
-  const distanceInKm = formState.deliveryDistance / 1000;
-  const additionalDistanceFee =
-    distanceInKm - 1 > 0 ? ((distanceInKm - 1) / 0.5) * 1 : 0;
-  calculatedFee += additionalDistanceFee * feePerKm;
+  // calculate delivery fee based on distance
+  const distanceFee = calculateDistanceFee(formState.deliveryDistance);
+  calculatedFee += distanceFee;
 
-  // Surcharge for number of items
+  // calculate surcharge for number of items
   const itemSurcharge = calculateItemSurcharge(formState.numItems);
   calculatedFee += itemSurcharge;
 
-  // Bulk fee for more than 12 items
-  if (formState.numItems > 12) {
-    calculatedFee += 1.2;
-  }
+  //  check if it's rush hour
+  const rushHourMultiplier = isFridayRushHour(formState.orderTime) ? 1.2 : 1;
+  calculatedFee *= rushHourMultiplier;
 
-  // Maximum delivery fee is 15€
+  // delivery fee can never be more than 15€
   if (calculatedFee > 15) {
     calculatedFee = 15;
   }
