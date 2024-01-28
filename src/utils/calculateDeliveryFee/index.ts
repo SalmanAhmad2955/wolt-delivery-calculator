@@ -15,6 +15,7 @@ const deliveryFeeCalculator = (formState: FormState): number => {
   if (formState.cartValue >= 200) {
     return calculatedFee;
   }
+
   // calcluate delivery fee based on cart value
   if (formState.cartValue < 10) {
     calculatedFee += 10 - formState.cartValue;
@@ -31,6 +32,7 @@ const deliveryFeeCalculator = (formState: FormState): number => {
   //  check if it's rush hour
   const rushHourMultiplier = isFridayRushHour(formState.orderTime) ? 1.2 : 1;
   calculatedFee *= rushHourMultiplier;
+  calculatedFee = +calculatedFee.toFixed(2);
 
   // delivery fee can never be more than 15€
   if (calculatedFee > 15) {

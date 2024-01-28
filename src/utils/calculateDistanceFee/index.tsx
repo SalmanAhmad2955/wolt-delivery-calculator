@@ -1,4 +1,5 @@
 const calculateDistanceFee = (distance: number): number => {
+  if (distance <= 1000) return 2;
   const baseFee = 2;
   const additionalDistance = distance - 1000;
 
@@ -7,9 +8,7 @@ const calculateDistanceFee = (distance: number): number => {
   if (additionalDistance > 0) {
     additionalFee = ((additionalDistance + 499) / 500) | 0;
   }
-
-  // Minimum fee is always 1€
-  return baseFee + (additionalFee >= 1 ? additionalFee : 1);
+  return baseFee + additionalFee;
 };
 
 export default calculateDistanceFee;
