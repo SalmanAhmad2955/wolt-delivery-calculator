@@ -26,19 +26,12 @@ export const DeliveryFeeCalculator = () => {
   };
 
   const calculateDeliveryFee = () => {
-    console.log(
-      "formState",
-      formState.cartValue,
-      formState.deliveryDistance,
-      formState.numItems,
-      formState.orderTime
-    );
     const formattedFormState = {
       ...formState,
       orderTime: formState.orderTime.toISOString(),
     };
     const calculatedFee = deliveryFeeCalculator(formattedFormState);
-    console.log("Fee", calculatedFee);
+
     setDeliveryFee(calculatedFee);
     setShowResult(true);
     setFormState({
@@ -126,7 +119,7 @@ export const DeliveryFeeCalculator = () => {
                 type={"datetime-local"}
                 value={format(formState.orderTime, "yyyy-MM-dd'T'HH:mm")}
                 label={"Time"}
-                htmlFor={"dateTime"}
+                htmlFor={"orderTime"}
                 onChange={handleOrderTimeChange}
               />
               <input
