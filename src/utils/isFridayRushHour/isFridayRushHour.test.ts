@@ -1,4 +1,4 @@
-import isFridayRushHour from "../isFridayRushHour";
+import isFridayRushHour from ".";
 
 describe("isFridayRushHour", () => {
   it("should return true during Friday rush hours (3 PM to 7 PM UTC)", () => {

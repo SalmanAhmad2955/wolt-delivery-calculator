@@ -1,4 +1,4 @@
-import calculateItemSurcharge from "../calculateItemSurcharge";
+import calculateItemSurcharge from ".";
 
 describe("calculateItemSurcharge", () => {
   it("should return 0 for 4 or fewer items", () => {

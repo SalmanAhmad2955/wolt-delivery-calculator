@@ -1,4 +1,4 @@
-import calculateDistanceFee from "../calculateDistanceFee";
+import calculateDistanceFee from ".";
 
 describe("calculateDistanceFee", () => {
   it("should return 2€ for a delivery distance of 1-1000 meters", () => {

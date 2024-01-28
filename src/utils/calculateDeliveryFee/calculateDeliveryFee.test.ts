@@ -1,4 +1,4 @@
-import deliveryFeeCalculator from "../calculateDeliveryFee";
+import deliveryFeeCalculator from ".";
 
 describe("deliveryFeeCalculator", () => {
   it("should provide free delivery for cart value equal to or more than 200€", () => {

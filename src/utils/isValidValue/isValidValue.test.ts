@@ -1,4 +1,4 @@
-import isValidValue from "../isValidValue";
+import isValidValue from ".";
 
 describe("isValidValue", () => {
   it("should return false if value is 0", () => {
