@@ -38,7 +38,7 @@ export const Input: React.FunctionComponent<InputProps> = ({
       return `border-red-500`;
     }
     if (valid) {
-      return `border-green-500`;
+      return `border-blue-300`;
     }
     return `border-gray-300`;
   };
