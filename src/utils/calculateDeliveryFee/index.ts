@@ -9,7 +9,6 @@ interface FormState {
   orderTime: Date;
 }
 const deliveryFeeCalculator = (formState: FormState): number => {
-  console.log(formState);
   let calculatedFee = 0;
 
   // check if cart value is greater or equal to  200€
