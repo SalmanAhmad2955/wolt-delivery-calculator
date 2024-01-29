@@ -73,7 +73,7 @@ export const DeliveryFeeCalculator = () => {
                     e.preventDefault();
                     handleSubmit(e);
                   }}
-                  data-test-id={"formID"}
+                  data-test-id="formID"
                 >
                   <Input
                     id={"cartValue"}
@@ -130,13 +130,14 @@ export const DeliveryFeeCalculator = () => {
                   <input
                     type="submit"
                     value="Calculate delivery fee"
-                    data-test-id={"submitID"}
+                    data-test-id="submitID"
                     className={
-                      "disabled:bg-gray-300 disabled:cursor-not-allowed" +
-                      " " +
-                      "font-bold mt-4 bg-sky-400 text-white rounded-md px-4 py-2 border-none" +
-                      " " +
-                      "enabled:hover:bg-sky-300 "
+                      "font-bold mt-4 bg-sky-400 text-white rounded-md px-4 py-2 border-none " +
+                      (formState.cartValue === 0 ||
+                      formState.deliveryDistance === 0 ||
+                      formState.numItems === 0
+                        ? "disabled:bg-gray-300 disabled:cursor-not-allowed"
+                        : "enabled:hover:bg-sky-400 transition ease-in delay-150 hover:-translate-y-1 hover:scale-110 duration-300")
                     }
                     disabled={
                       formState.cartValue === 0 ||

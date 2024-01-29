@@ -18,11 +18,7 @@ export const ShowResult: React.FC<Result> = ({ Result, setShowResult }) => {
         id={"backToCalculator"}
         data-test-id={"fee"}
         className={
-          "disabled:bg-gray-300 disabled:cursor-not-allowed" +
-          " " +
-          "font-bold mt-2 bg-sky-400 text-white rounded-md px-4 py-2 border-none" +
-          " " +
-          "enabled:hover:bg-sky-300 "
+          "font-bold mt-2 bg-sky-400 text-white rounded-md px-4 py-2 border-none  transition ease-in delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-sky-400 duration-300"
         }
         style={{
           borderRadius: "8px",
