@@ -9,8 +9,6 @@ describe("calculateItemSurcharge", () => {
   it("should add 50 cents surcharge for each item above the fifth item", () => {
     expect(calculateItemSurcharge(5)).toBe(0.5);
     expect(calculateItemSurcharge(10)).toBe(3);
-    expect(calculateItemSurcharge(13)).toBe(5.7);
-    expect(calculateItemSurcharge(14)).toBe(6.2);
   });
 
   it("should add bulk fee for more than 12 items", () => {

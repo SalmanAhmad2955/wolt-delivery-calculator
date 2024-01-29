@@ -16,7 +16,7 @@ describe("calculateDistanceFee", () => {
     expect(calculateDistanceFee(2000)).toBe(4);
   });
   it("should return 4€ for a delivery distance of 2001-2500 meters", () => {
-    expect(calculateDistanceFee(1501)).toBe(4);
-    expect(calculateDistanceFee(2000)).toBe(4);
+    expect(calculateDistanceFee(2001)).toBe(5);
+    expect(calculateDistanceFee(2500)).toBe(5);
   });
 });

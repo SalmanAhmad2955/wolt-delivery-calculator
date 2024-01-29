@@ -6,7 +6,8 @@ describe("deliveryFeeCalculator", () => {
       cartValue: 200,
       deliveryDistance: 1501,
       numItems: 14,
-      orderTime: "2024-01-26T12:00:00Z",
+      orderTime:
+        "Fri Jan 26 2024 12:08:00 GMT+0100 (Central European Standard Time)",
     };
     expect(deliveryFeeCalculator(formState)).toBe(0);
   });
@@ -148,5 +149,16 @@ describe("deliveryFeeCalculator", () => {
 
     expect(deliveryFeeCalculator(rushHourFormState)).toBe(8.4);
     expect(deliveryFeeCalculator(nonRushHourFormState)).toBe(10.7);
+  });
+
+  it("should provide 15€ if value exce from 15€", () => {
+    const formState = {
+      cartValue: 5,
+      deliveryDistance: 6300,
+      numItems: 2,
+      orderTime:
+        "Sat Jan 27 2024 15:00:00 GMT+0100 (Central European Standard Time)",
+    };
+    expect(deliveryFeeCalculator(formState)).toBe(15);
   });
 });
