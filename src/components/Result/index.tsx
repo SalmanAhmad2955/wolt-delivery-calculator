@@ -7,7 +7,7 @@ type Result = {
 
 export const ShowResult: React.FC<Result> = ({ Result, setShowResult }) => {
   return (
-    <div>
+    <div className={`p-[2px] rounded-[12px]`}>
       <h3 className={"font-semibold text-2xl mt-2 mb-4"}>
         {Result === 0
           ? "Your Delivery Is Free 🎉"
@@ -20,7 +20,7 @@ export const ShowResult: React.FC<Result> = ({ Result, setShowResult }) => {
         className={
           "disabled:bg-gray-300 disabled:cursor-not-allowed" +
           " " +
-          "font-bold mt-4 bg-sky-400 text-white rounded-md px-4 py-2 border-none" +
+          "font-bold mt-2 bg-sky-400 text-white rounded-md px-4 py-2 border-none" +
           " " +
           "enabled:hover:bg-sky-300 "
         }
