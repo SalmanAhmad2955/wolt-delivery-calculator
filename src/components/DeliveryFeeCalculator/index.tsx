@@ -69,10 +69,11 @@ export const DeliveryFeeCalculator = () => {
                 e.preventDefault();
                 handleSubmit(e);
               }}
+              data-test-id={"formID"}
             >
               <Input
                 id={"cartValue"}
-                dataTestId="cartValue"
+                dataTestId={"cartValue"}
                 name={"cartValue"}
                 step={"0.01"}
                 type={"number"}
@@ -125,6 +126,7 @@ export const DeliveryFeeCalculator = () => {
               <input
                 type="submit"
                 value="Calculate delivery fee"
+                data-test-id={"submitID"}
                 className={
                   "disabled:bg-gray-300 disabled:cursor-not-allowed" +
                   " " +

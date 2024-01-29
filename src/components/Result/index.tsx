@@ -16,6 +16,7 @@ export const ShowResult: React.FC<Result> = ({ Result, setShowResult }) => {
 
       <button
         id={"backToCalculator"}
+        data-test-id={"fee"}
         className={
           "disabled:bg-gray-300 disabled:cursor-not-allowed" +
           " " +

@@ -70,13 +70,12 @@ test("handles input change and calls onChange prop", () => {
     />
   );
 
-  // simulate user input
   (async () => {
     const elements = await screen.findAllByText("testInput");
     fireEvent.change(elements[0], {
       target: { value: "42" },
     });
-    // check if the onChange prop is called with the correct arguments
+
     expect(mockOnChange).toHaveBeenCalledWith(
       expect.objectContaining({
         target: expect.objectContaining({ value: "42" }),
@@ -100,13 +99,12 @@ test("displays error border for invalid input", () => {
     />
   );
 
-  // simulate user input
   (async () => {
     const elements = await screen.findAllByText("testInput");
     fireEvent.change(elements[0], {
       target: { value: "20" },
     });
-    // Check if the error border is applied
+
     expect(screen.getByTestId("testInput")).toHaveClass("border-red-500");
   })();
 });
@@ -126,13 +124,12 @@ test('displays error border for non-numeric input with type "number"', () => {
     />
   );
 
-  // simulate user input
   (async () => {
     const elements = await screen.findAllByText("testInput");
     fireEvent.change(elements[0], {
       target: { value: "abc" },
     });
-    // check if the error border is applied
+
     expect(screen.getByTestId("testInput")).toHaveClass("border-red-500");
   })();
 });

@@ -26,9 +26,7 @@ test("renders ShowResult component with free delivery message", () => {
 test("calls setShowResult when Back to the calculator button is clicked", () => {
   render(<ShowResult Result={mockResult} setShowResult={mockSetShowResult} />);
 
-  // Click the Back to the calculator button
   fireEvent.click(screen.getByText("Back to the calculator"));
 
-  // Check if setShowResult is called with the correct argument
   expect(mockSetShowResult).toHaveBeenCalledWith(false);
 });
