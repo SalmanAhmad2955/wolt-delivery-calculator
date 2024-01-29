@@ -1,5 +1,5 @@
 const calculateItemSurcharge = (numItems: number): number => {
-  const bultFee = 1.2;
+  const bulkFee = 1.2;
   const itemSurcharge = 0.5;
   if (numItems <= 4) {
     return 0;
@@ -9,7 +9,7 @@ const calculateItemSurcharge = (numItems: number): number => {
     return (numItems - 4) * itemSurcharge;
   }
 
-  return (numItems - 4) * itemSurcharge + bultFee;
+  return (numItems - 4) * itemSurcharge + bulkFee;
 };
 
 export default calculateItemSurcharge;
