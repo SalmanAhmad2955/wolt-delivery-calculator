@@ -11,7 +11,7 @@ export const ShowResult: React.FC<Result> = ({ Result, setShowResult }) => {
       <h3 className={"font-semibold text-2xl mt-2 mb-4"}>
         {Result === 0
           ? "Your Delivery Is Free 🎉"
-          : `Delivery Price for the order is : ${Result}€`}
+          : `Delivery Fee For Your Order Is : ${Result}€`}
       </h3>
 
       <button

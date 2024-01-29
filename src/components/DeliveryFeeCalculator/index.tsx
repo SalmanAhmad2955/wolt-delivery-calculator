@@ -34,12 +34,13 @@ export const DeliveryFeeCalculator = () => {
 
     setDeliveryFee(calculatedFee);
     setShowResult(true);
-    setFormState({
+    setFormState((prev) => ({
+      ...prev,
       cartValue: 0,
       deliveryDistance: 0,
       numItems: 0,
       orderTime: new Date(),
-    });
+    }));
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

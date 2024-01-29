@@ -26,9 +26,7 @@ test("calculates delivery fee on form submission without rush hours", async () =
   });
 
   fireEvent.click(screen.getByText("Calculate delivery fee"));
-  const resultElement = screen.getByText(
-    "Delivery Price for the order is : 2€"
-  );
+  const resultElement = screen.getByText("Delivery Fee For Your Order Is : 2€");
   expect(resultElement).toBeInTheDocument();
 });
 
@@ -50,7 +48,7 @@ test("calculates delivery fee on form submission with rush hours", async () => {
 
   fireEvent.click(screen.getByText("Calculate delivery fee"));
   const resultElement = screen.getByText(
-    "Delivery Price for the order is : 2.4€"
+    "Delivery Fee For Your Order Is : 2.4€"
   );
   expect(resultElement).toBeInTheDocument();
 });

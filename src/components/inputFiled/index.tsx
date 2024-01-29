@@ -45,7 +45,8 @@ export const Input: React.FunctionComponent<InputProps> = ({
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLocalValue(e.target.value);
-    isValidInput(Number(e.target.value), Number(min), Number(max));
+    const numericValue = parseFloat(e.target.value);
+    isValidInput(numericValue, Number(min), Number(max));
     onChange && onChange(e);
   };
 
@@ -66,7 +67,6 @@ export const Input: React.FunctionComponent<InputProps> = ({
   };
 
   const handleBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // validate error
     if (e.target.validity.patternMismatch) {
       setValid(false);
       setError(true);
@@ -92,9 +92,20 @@ export const Input: React.FunctionComponent<InputProps> = ({
         max={max}
         pattern="[-]?[0-9]*[.,]?[0-9]+"
         inputMode="decimal"
+        aria-invalid={error}
+        aria-describedby={error ? `${id}-error-message` : undefined}
       />
       {supportingText && (
         <h6 className={"inline-block ml-3"}>{supportingText}</h6>
+      )}
+      {error && (
+        <div
+          id={`${id}-error-message`}
+          className={"py-1 text-red-500 ml-36 text-sm"}
+          role="alert"
+        >
+          Invalid input. Please enter a valid Value.
+        </div>
       )}
     </div>
   );

@@ -12,7 +12,7 @@ test("renders ShowResult component with delivery price", () => {
 
   // Check if the text with delivery price is rendered
   expect(
-    screen.getByText(`Delivery Price for the order is : ${mockResult}€`)
+    screen.getByText(`Delivery Fee For Your Order Is : ${mockResult}€`)
   ).toBeInTheDocument();
 });
 
