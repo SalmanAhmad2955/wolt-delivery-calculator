@@ -6,8 +6,9 @@ describe("deliveryFeeCalculator", () => {
       cartValue: 200,
       deliveryDistance: 1501,
       numItems: 14,
-      orderTime:
-        "Fri Jan 26 2024 12:08:00 GMT+0100 (Central European Standard Time)",
+      orderTime: new Date(
+        "Fri Jan 26 2024 12:08:00 GMT+0100 (Central European Standard Time)"
+      ),
     };
     expect(deliveryFeeCalculator(formState)).toBe(0);
   });
@@ -17,8 +18,9 @@ describe("deliveryFeeCalculator", () => {
       cartValue: 20,
       deliveryDistance: 1000,
       numItems: 1,
-      orderTime:
-        "Sat Jan 27 2024 15:00:00 GMT+0100 (Central European Standard Time)",
+      orderTime: new Date(
+        "Sat Jan 27 2024 15:00:00 GMT+0100 (Central European Standard Time)"
+      ),
     };
     expect(deliveryFeeCalculator(formState)).toBe(2);
   });
@@ -28,8 +30,9 @@ describe("deliveryFeeCalculator", () => {
       cartValue: 20,
       deliveryDistance: 1000,
       numItems: 1,
-      orderTime:
-        "Fri Jan 26 2024 17:08:00 GMT+0100 (Central European Standard Time)",
+      orderTime: new Date(
+        "Fri Jan 26 2024 17:08:00 GMT+0100 (Central European Standard Time)"
+      ),
     };
     expect(deliveryFeeCalculator(formState)).toBe(2.4);
   });
@@ -39,8 +42,9 @@ describe("deliveryFeeCalculator", () => {
       cartValue: 15,
       deliveryDistance: 1499,
       numItems: 5,
-      orderTime:
-        "Sat Jan 27 2024 15:00:00 GMT+0100 (Central European Standard Time)",
+      orderTime: new Date(
+        "Sat Jan 27 2024 15:00:00 GMT+0100 (Central European Standard Time)"
+      ),
     };
     expect(deliveryFeeCalculator(formState1)).toBe(3.5);
 
@@ -48,8 +52,9 @@ describe("deliveryFeeCalculator", () => {
       cartValue: 15,
       deliveryDistance: 1500,
       numItems: 5,
-      orderTime:
-        "Sat Jan 27 2024 15:00:00 GMT+0100 (Central European Standard Time)",
+      orderTime: new Date(
+        "Sat Jan 27 2024 15:00:00 GMT+0100 (Central European Standard Time)"
+      ),
     };
     expect(deliveryFeeCalculator(formState2)).toBe(3.5);
 
@@ -57,8 +62,9 @@ describe("deliveryFeeCalculator", () => {
       cartValue: 15,
       deliveryDistance: 1501,
       numItems: 5,
-      orderTime:
-        "Sat Jan 27 2024 15:00:00 GMT+0100 (Central European Standard Time)",
+      orderTime: new Date(
+        "Sat Jan 27 2024 15:00:00 GMT+0100 (Central European Standard Time)"
+      ),
     };
     expect(deliveryFeeCalculator(formState3)).toBe(4.5);
   });
@@ -68,8 +74,9 @@ describe("deliveryFeeCalculator", () => {
       cartValue: 15,
       deliveryDistance: 1499,
       numItems: 5,
-      orderTime:
-        "Fri Jan 26 2024 17:08:00 GMT+0100 (Central European Standard Time)",
+      orderTime: new Date(
+        "Fri Jan 26 2024 17:08:00 GMT+0100 (Central European Standard Time)"
+      ),
     };
     expect(deliveryFeeCalculator(formState1)).toBe(4.2);
 
@@ -77,8 +84,9 @@ describe("deliveryFeeCalculator", () => {
       cartValue: 15,
       deliveryDistance: 1500,
       numItems: 5,
-      orderTime:
-        "Fri Jan 26 2024 17:08:00 GMT+0100 (Central European Standard Time)",
+      orderTime: new Date(
+        "Fri Jan 26 2024 17:08:00 GMT+0100 (Central European Standard Time)"
+      ),
     };
     expect(deliveryFeeCalculator(formState2)).toBe(4.2);
 
@@ -86,8 +94,9 @@ describe("deliveryFeeCalculator", () => {
       cartValue: 15,
       deliveryDistance: 1501,
       numItems: 5,
-      orderTime:
-        "Fri Jan 26 2024 17:08:00 GMT+0100 (Central European Standard Time)",
+      orderTime: new Date(
+        "Fri Jan 26 2024 17:08:00 GMT+0100 (Central European Standard Time)"
+      ),
     };
     expect(deliveryFeeCalculator(formState3)).toBe(5.4);
   });
@@ -97,8 +106,9 @@ describe("deliveryFeeCalculator", () => {
       cartValue: 15,
       deliveryDistance: 1501,
       numItems: 11,
-      orderTime:
-        "Sat Jan 27 2024 15:00:00 GMT+0100 (Central European Standard Time)",
+      orderTime: new Date(
+        "Sat Jan 27 2024 15:00:00 GMT+0100 (Central European Standard Time)"
+      ),
     };
     expect(deliveryFeeCalculator(formState1)).toBe(7.5);
 
@@ -106,8 +116,9 @@ describe("deliveryFeeCalculator", () => {
       cartValue: 15,
       deliveryDistance: 1501,
       numItems: 13,
-      orderTime:
-        "Sat Jan 27 2024 15:00:00 GMT+0100 (Central European Standard Time)",
+      orderTime: new Date(
+        "Sat Jan 27 2024 15:00:00 GMT+0100 (Central European Standard Time)"
+      ),
     };
     expect(deliveryFeeCalculator(formState2)).toBe(9.7);
   });
@@ -116,8 +127,9 @@ describe("deliveryFeeCalculator", () => {
       cartValue: 15,
       deliveryDistance: 1501,
       numItems: 11,
-      orderTime:
-        "Fri Jan 26 2024 17:08:00 GMT+0100 (Central European Standard Time)",
+      orderTime: new Date(
+        "Fri Jan 26 2024 17:08:00 GMT+0100 (Central European Standard Time)"
+      ),
     };
     expect(deliveryFeeCalculator(formState1)).toBe(9);
 
@@ -125,8 +137,9 @@ describe("deliveryFeeCalculator", () => {
       cartValue: 15,
       deliveryDistance: 1501,
       numItems: 13,
-      orderTime:
-        "Fri Jan 26 2024 17:08:00 GMT+0100 (Central European Standard Time)",
+      orderTime: new Date(
+        "Fri Jan 26 2024 17:08:00 GMT+0100 (Central European Standard Time)"
+      ),
     };
     expect(deliveryFeeCalculator(formState2)).toBe(11.64);
   });
@@ -136,15 +149,17 @@ describe("deliveryFeeCalculator", () => {
       cartValue: 20,
       deliveryDistance: 1501,
       numItems: 10,
-      orderTime:
-        "Fri Jan 26 2024 17:08:00 GMT+0100 (Central European Standard Time)",
+      orderTime: new Date(
+        "Fri Jan 26 2024 17:08:00 GMT+0100 (Central European Standard Time)"
+      ),
     };
     const nonRushHourFormState = {
       cartValue: 15,
       deliveryDistance: 1501,
       numItems: 15,
-      orderTime:
-        "Sat Jan 27 2024 15:00:00 GMT+0100 (Central European Standard Time)",
+      orderTime: new Date(
+        "Sat Jan 27 2024 15:00:00 GMT+0100 (Central European Standard Time)"
+      ),
     };
 
     expect(deliveryFeeCalculator(rushHourFormState)).toBe(8.4);
@@ -156,8 +171,9 @@ describe("deliveryFeeCalculator", () => {
       cartValue: 5,
       deliveryDistance: 6300,
       numItems: 2,
-      orderTime:
-        "Sat Jan 27 2024 15:00:00 GMT+0100 (Central European Standard Time)",
+      orderTime: new Date(
+        "Sat Jan 27 2024 15:00:00 GMT+0100 (Central European Standard Time)"
+      ),
     };
     expect(deliveryFeeCalculator(formState)).toBe(15);
   });

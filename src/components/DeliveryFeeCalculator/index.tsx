@@ -26,11 +26,11 @@ export const DeliveryFeeCalculator = () => {
   };
 
   const calculateDeliveryFee = () => {
-    const formattedFormState = {
-      ...formState,
-      orderTime: formState.orderTime.toISOString(),
-    };
-    const calculatedFee = deliveryFeeCalculator(formattedFormState);
+    // const formattedFormState = {
+    //   ...formState,
+    //   orderTime: formState.orderTime.toISOString(),
+    // };
+    const calculatedFee = deliveryFeeCalculator(formState);
 
     setDeliveryFee(calculatedFee);
     setShowResult(true);

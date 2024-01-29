@@ -1,4 +1,4 @@
-const isFridayRushHour = (orderTime: string): boolean => {
+const isFridayRushHour = (orderTime: Date): boolean => {
   const orderDate = new Date(orderTime);
 
   // get day of the week (0 is Sunday, 1 is Monday, ..., 5 is Friday)
