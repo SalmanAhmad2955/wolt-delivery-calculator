@@ -47,9 +47,10 @@ export const DeliveryFeeCalculator = () => {
     <>
       <div className={"relative"}>
         <div
-          className={`absolute top-[-${
-            showResult ? "25%" : "12%"
-          }] left-1/2 transform -translate-x-1/2 z-10`}
+          className={`absolute
+            ${
+              showResult ? "top-[-25%]" : "top-[-12%]"
+            } left-1/2 transform -translate-x-1/2 z-10`}
         >
           <img src={logo} alt="Logo" className={"w-20"} />
         </div>
@@ -132,12 +133,12 @@ export const DeliveryFeeCalculator = () => {
                     value="Calculate delivery fee"
                     data-test-id="submitID"
                     className={
-                      "font-bold mt-4 bg-sky-400 text-white rounded-md px-4 py-2 border-none " +
+                      "font-bold mt-4 bg-sky-400 text-white rounded-full px-4 py-2 border-none " +
                       (formState.cartValue === 0 ||
                       formState.deliveryDistance === 0 ||
                       formState.numItems === 0
                         ? "disabled:bg-gray-300 disabled:cursor-not-allowed"
-                        : "enabled:hover:bg-sky-400 transition ease-in delay-150 hover:-translate-y-1 hover:scale-110 duration-300")
+                        : "enabled:hover:bg-sky-500 transition ease-in delay-150 hover:-translate-y-1 hover:scale-110 duration-300")
                     }
                     disabled={
                       formState.cartValue === 0 ||

@@ -79,7 +79,7 @@ export const Input: React.FunctionComponent<InputProps> = ({
         {label}
       </label>
       <input
-        className={`${getBorderColor()} border-2 w-64 rounded-md px-2 py-1 inline-block focus:ring-4 focus:outline-0`}
+        className={`${getBorderColor()} border-2 w-64 rounded-full px-2 py-1 inline-block focus:ring-4 focus:outline-0`}
         onBlur={handleBlur}
         type={type}
         id={id}
